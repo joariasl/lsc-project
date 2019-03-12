@@ -13,3 +13,9 @@ RUN apt-get update \
   && apt-get remove --purge -y \
     gnupg \
     apt-transport-https
+
+RUN mkdir /home/lsc && chown -R lsc.lsc /home/lsc
+
+USER lsc
+
+WORKDIR /home/lsc
