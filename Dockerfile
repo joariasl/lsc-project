@@ -1,5 +1,7 @@
 FROM openjdk:8-jre-slim
 
+LABEL maintainer="Jorge Arias <mail@jorgearias.cl>"
+
 RUN apt-get update \
   && apt-get install -y \
     curl \
@@ -19,3 +21,5 @@ RUN mkdir /home/lsc && chown -R lsc.lsc /home/lsc
 USER lsc
 
 WORKDIR /home/lsc
+
+ENTRYPOINT ["/usr/bin/lsc"]
